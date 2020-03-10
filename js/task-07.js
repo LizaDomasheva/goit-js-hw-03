@@ -32,7 +32,7 @@ const account = {
         return {
             amount: amount,
             type: type,
-            id: this.transactions.length
+            id: this.transactions.length + 1
         };
     },
 
@@ -100,7 +100,7 @@ const account = {
      * Метод возвращает количество средств
      * определенного типа транзакции из всей истории транзакций
      */
-    
+
 
     getTransactionTotal(type) {
         let result = 0;
@@ -110,21 +110,18 @@ const account = {
                 result += this.transactions[i].amount;
             }
         }
-        
+
         return result;
 
     },
 };
 
-// account.deposit(300);
-// account.deposit(800);
-// account.deposit(500);
-// account.withdraw(1000);
+account.deposit(300);
+account.deposit(800);
+account.deposit(500);
+account.withdraw(1000);
 
-// console.log(account.balance);
-// console.log(account.transactions);
-// console.log(account.getTransactionDetails(0));
-// console.log(account.getTransactionTotal('deposit'));
-
-
-
+console.log(account.balance);
+console.log(account.transactions);
+console.log(account.getTransactionDetails(2));
+console.log(account.getTransactionTotal('deposit'));
